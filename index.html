@@ -1,43 +1,361 @@
 # <!DOCTYPE html>
 <html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELVA Struktur</title>
+  <meta name="description" content="ELVA Struktur hjälper små företag med administration, struktur och HR-stöd." />
+  <style>
+    :root {
+      --bg: #f4efe8;
+      --bg-soft: #ebe3d8;
+      --text: #2f241f;
+      --brown: #5c4335;
+      --brown-dark: #3f2d24;
+      --olive: #6e6b58;
+      --line: #d8cec2;
+      --white: #ffffff;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brown-dark);
+      margin: 0;
+    }
+
+    .brand span {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      color: var(--olive);
+      display: block;
+      margin-top: 4px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--brown);
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      color: var(--brown-dark);
+      font-weight: normal;
+    }
+
+    .hero-text p {
+      max-width: 560px;
+      font-size: 1.1rem;
+      margin: 0 0 28px;
+    }
+
+    .tagline {
+      color: var(--olive);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--brown-dark);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: var(--brown);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--brown-dark);
+      color: var(--brown-dark);
+    }
+
+    .button-secondary:hover {
+      background: var(--bg-soft);
+    }
+
+    .hero-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      padding: 28px;
+      border-radius: 24px;
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: var(--brown-dark);
+      font-weight: normal;
+    }
+
+    .hero-card ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+
+    section {
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin: 0 0 14px;
+      color: var(--brown-dark);
+      font-weight: normal;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--brown-dark);
+      font-size: 1.15rem;
+      font-weight: normal;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      font-size: 0.98rem;
+    }
+
+    .about-box {
+      max-width: 800px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .contact-box {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      max-width: 700px;
+    }
+
+    footer {
+      padding: 30px 0 60px;
+      color: var(--olive);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<div class="container">
+  <header>
+    <div class="wrapper nav">
+      <p class="brand">
+        ELVA
+        <span>STRUKTUR</span>
+      </p>
+      <nav>
+        <a href="#tjanster">Tjänster</a>
+        <a href="#om">Om</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-<h1>ELVA Struktur</h1>
-<p>– för att ditt företag ska kunna fokusera på det viktiga.</p>
+  <main>
+    <section class="hero wrapper">
+      <div class="hero-text">
+        <span class="tagline">Administration • Struktur • HR-stöd</span>
+        <h1>Ordning i vardagen – tid för det viktigaste.</h1>
+        <p>
+          ELVA Struktur hjälper små företag att skapa ordning i administration,
+          arbetsrutiner och HR-relaterade uppgifter så att det blir lättare att fokusera
+          på verksamheten.
+        </p>
+        <div class="buttons">
+          <a class="button button-primary" href="#kontakt">Kontakta mig</a>
+          <a class="button button-secondary" href="#tjanster">Se tjänster</a>
+        </div>
+      </div>
 
-<div class="section">
-<h2>Om</h2>
-<p>
-ELVA Struktur erbjuder administrativt och organisatoriskt stöd till företag som vill frigöra tid och skapa bättre struktur i sin verksamhet.
-Genom virtuella assistenttjänster erbjuder ELVA Struktur hjälp med allt från administration, HR- och rekryteringsprocesser till marknadsföring på sociala medier. Tjänsterna riktar sig främst till små och medelstora företag som saknar intern administrativ resurs men som har behov av stöd i det dagliga arbetet.
-Målet är att avlasta företagare från tidskrävande administrativa uppgifter så att de kan fokusera på den egna kärnverksamheten och dess tillväxt.
+      <div class="hero-card">
+        <h2>Jag hjälper till med</h2>
+        <ul>
+          <li>Administrativ avlastning</li>
+          <li>Struktur i dokument och rutiner</li>
+          <li>HR- och rekryteringsadministration</li>
+          <li>Kundadministration och uppföljning</li>
+        </ul>
+      </div>
+    </section>
 
-</p>
-</div>
+    <section id="tjanster">
+      <div class="wrapper">
+        <h2 class="section-title">Tjänster</h2>
+        <p class="section-intro">
+          Stöd för små företag som behöver mer struktur, bättre överblick
+          och avlastning i det dagliga arbetet.
+        </p>
 
-<div class="section">
-<h2>Tjänster</h2>
-<ul>
-<li>Administration</li>
-<li>Struktur och organisering</li>
-<li>HR</li>
-<li>Kunddata</li>
-<li>Projektstöd</li>
-</ul>
-</div>
-<div class="section">
-<h2>Kontakt</h2>
-<p>
-  <br>Vad behöver just ditt företag hjälp med? Skriv ihop en enkel sammanfattning och skicka till mej.</br>
-  <br>
-Mail: ellinore@elvastruktur.se
-</p>
-</div>
+        <div class="grid">
+          <div class="card">
+            <h3>Administration</h3>
+            <p>
+              E-posthantering, kalenderöversikt, dokumenthantering,
+              research och annan löpande administrativ avlastning.
+            </p>
+          </div>
 
-</div>
+          <div class="card">
+            <h3>Struktur & organisation</h3>
+            <p>
+              Struktur i dokument, mappar, rutiner, checklistor
+              och arbetsprocesser som skapar ordning och sparar tid.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>HR-stöd</h3>
+            <p>
+              Rekryteringsadministration, onboarding,
+              personaldokument och enklare HR-relaterade uppgifter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="om">
+      <div class="wrapper">
+        <h2 class="section-title">Om ELVA Struktur</h2>
+        <div class="about-box">
+          <p>
+            ELVA Struktur finns för företag som vill frigöra tid och minska stressen
+            kring administrationen. Med fokus på struktur, tydlighet och pålitligt stöd
+            hjälper jag företag att skapa bättre ordning bakom kulisserna.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="wrapper">
+        <h2 class="section-title">Kontakt</h2>
+        <div class="contact-box">
+          <p>
+            Vill du veta mer om hur jag kan hjälpa ditt företag med administration,
+            struktur eller HR-stöd?
+          </p>
+          <p>
+            Mejla gärna på <strong>hej@elvastruktur.se</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      © ELVA Struktur
+    </div>
+  </footer>
 
 </body>
 </html>
