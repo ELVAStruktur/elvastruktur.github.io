@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ELVA Struktur</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="description" content="ELVA Struktur hjälper små företag med administration, struktur och HR-stöd." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     :root {
       --bg: #f4efe8;
@@ -16,22 +17,19 @@
       --olive: #6e6b58;
       --line: #d8cec2;
       --white: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.05);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: Georgia, "Georgia", serif;
-      line-height: 1.6;
+      font-family: Calibri, Arial, sans-serif;
+      line-height: 1.7;
     }
 
     .wrapper {
@@ -49,316 +47,173 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
     }
 
     .brand {
-      font-size: 1.5rem;
-      letter-spacing: 0.08em;
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--brown-dark);
-      margin: 0;
     }
 
     .brand span {
-      font-size: 0.95rem;
-      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
       color: var(--olive);
       display: block;
-      margin-top: 4px;
     }
 
     nav a {
       text-decoration: none;
       color: var(--text);
       margin-left: 20px;
-      font-size: 0.95rem;
-    }
-
-    nav a:hover {
-      color: var(--brown);
     }
 
     .hero {
-      padding: 90px 0 70px;
+      padding: 90px 0;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 40px;
-      align-items: center;
     }
 
-    .hero-text h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.05;
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 3.5rem;
       margin: 0 0 20px;
-      color: var(--brown-dark);
-      font-weight: normal;
-    }
-
-    .hero-text p {
-      max-width: 560px;
-      font-size: 1.1rem;
-      margin: 0 0 28px;
-    }
-
-    .tagline {
-      color: var(--olive);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.85rem;
-      margin-bottom: 14px;
-      display: block;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
     }
 
     .button {
-      display: inline-block;
-      padding: 14px 22px;
-      text-decoration: none;
+      padding: 12px 20px;
       border-radius: 999px;
-      font-size: 0.95rem;
-      transition: 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .button-primary {
       background: var(--brown-dark);
-      color: var(--white);
-    }
-
-    .button-primary:hover {
-      background: var(--brown);
-    }
-
-    .button-secondary {
-      border: 1px solid var(--brown-dark);
-      color: var(--brown-dark);
-    }
-
-    .button-secondary:hover {
-      background: var(--bg-soft);
-    }
-
-    .hero-card {
-      background: var(--bg-soft);
-      border: 1px solid var(--line);
-      padding: 28px;
-      border-radius: 24px;
-    }
-
-    .hero-card h2 {
-      margin-top: 0;
-      font-size: 1.2rem;
-      color: var(--brown-dark);
-      font-weight: normal;
-    }
-
-    .hero-card ul {
-      padding-left: 18px;
-      margin-bottom: 0;
+      color: white;
     }
 
     section {
-      padding: 70px 0;
+      padding: 100px 0;
       border-top: 1px solid var(--line);
     }
 
     .section-title {
+      font-family: Georgia, serif;
       font-size: 2rem;
-      margin: 0 0 14px;
-      color: var(--brown-dark);
-      font-weight: normal;
-    }
-
-    .section-intro {
-      max-width: 700px;
-      margin-bottom: 36px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
     .card {
-      background: var(--white);
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 24px;
+      transition: 0.2s;
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: var(--brown-dark);
-      font-size: 1.15rem;
-      font-weight: normal;
+    .card:hover {
+      transform: translateY(-5px);
     }
 
-    .card p {
-      margin-bottom: 0;
-      font-size: 0.98rem;
-    }
-
-    .about-box {
-      max-width: 800px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 28px;
-    }
-
-    .contact-box {
-      background: var(--bg-soft);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 28px;
-      max-width: 700px;
+    .insta-icon {
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--brown-dark);
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
     }
 
     footer {
-      padding: 30px 0 60px;
-      color: var(--olive);
-      font-size: 0.9rem;
+      padding: 40px 0;
+      text-align: center;
     }
 
-    @media (max-width: 850px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 60px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 16px;
-      }
+    @media(max-width:800px){
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="wrapper nav">
-      <p class="brand">
-        ELVA
-        <span>STRUKTUR</span>
-      </p>
-      <nav>
-        <a href="#tjanster">Tjänster</a>
-        <a href="#om">Om</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+<header>
+  <div class="wrapper nav">
+    <div class="brand">ELVA <span>STRUKTUR</span></div>
+    <nav>
+      <a href="#tjanster">Tjänster</a>
+      <a href="#om">Om</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrapper">
+  <div>
+    <h1>Ordning i vardagen – tid för det viktigaste.</h1>
+    <p>Jag hjälper företag med administration, struktur och HR.</p>
+    <a class="button button-primary" href="#kontakt">Kontakta mig</a>
+  </div>
+
+  <div class="card">
+    <h3>Jag hjälper till med</h3>
+    <ul>
+      <li>Administration</li>
+      <li>Struktur</li>
+      <li>HR-stöd</li>
+    </ul>
+  </div>
+</section>
+
+<section id="tjanster">
+  <div class="wrapper">
+    <h2 class="section-title">Tjänster</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Administration</h3>
+        <p>Avlastning i vardagen.</p>
+      </div>
+
+      <div class="card">
+        <h3>Struktur</h3>
+        <p>Ordning i dokument och rutiner.</p>
+      </div>
+
+      <div class="card">
+        <h3>HR</h3>
+        <p>Stöd i rekrytering och personal.</p>
+      </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <section class="hero wrapper">
-      <div class="hero-text">
-        <span class="tagline">Administration • Struktur • HR-stöd</span>
-        <h1>Ordning i vardagen – tid för det viktigaste.</h1>
-        <p>
-          ELVA Struktur hjälper små företag att skapa ordning i administration,
-          arbetsrutiner och HR-relaterade uppgifter så att det blir lättare att fokusera
-          på verksamheten.
-        </p>
-        <div class="buttons">
-          <a class="button button-primary" href="#kontakt">Kontakta mig</a>
-          <a class="button button-secondary" href="#tjanster">Se tjänster</a>
-        </div>
-      </div>
+<section id="kontakt">
+  <div class="wrapper">
+    <h2 class="section-title">Kontakt</h2>
+    <p>ellinore@elvastruktur.se</p>
 
-      <div class="hero-card">
-        <h2>Jag hjälper till med</h2>
-        <ul>
-          <li>Administrativ avlastning</li>
-          <li>Struktur i dokument och rutiner</li>
-          <li>HR- och rekryteringsadministration</li>
-          <li>Kundadministration och uppföljning</li>
-        </ul>
-      </div>
-    </section>
+    <a class="insta-icon" href="https://instagram.com/elvastruktur" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+</section>
 
-    <section id="tjanster">
-      <div class="wrapper">
-        <h2 class="section-title">Tjänster</h2>
-        <p class="section-intro">
-          Stöd för små företag som behöver mer struktur, bättre överblick
-          och avlastning i det dagliga arbetet.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Administration</h3>
-            <p>
-              E-posthantering, kalenderöversikt, dokumenthantering,
-              research och annan löpande administrativ avlastning.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Struktur & organisation</h3>
-            <p>
-              Struktur i dokument, mappar, rutiner, checklistor
-              och arbetsprocesser som skapar ordning och sparar tid.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>HR-stöd</h3>
-            <p>
-              Rekryteringsadministration, onboarding,
-              personaldokument och enklare HR-relaterade uppgifter.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="om">
-      <div class="wrapper">
-        <h2 class="section-title">Om ELVA Struktur</h2>
-        <div class="about-box">
-          <p>
-            ELVA Struktur finns för företag som vill frigöra tid och minska stressen
-            kring administrationen. Med fokus på struktur, tydlighet och pålitligt stöd
-            hjälper jag företag att skapa bättre ordning bakom kulisserna.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt">
-      <div class="wrapper">
-        <h2 class="section-title">Kontakt</h2>
-        <div class="contact-box">
-          <p>
-            Vill du veta mer om hur jag kan hjälpa ditt företag med administration,
-            struktur eller HR-stöd?
-          </p>
-          <p>
-            Mejla gärna på <strong>ellinore@elvastruktur.se</strong>
-          </p>
-
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrapper">
-      © ELVA Struktur <a href="https://instagram.com/elvastruktur" target="_blank" style="font-size:28px;color:#3f2d24;">
-<i class="fa-brands fa-instagram"></i>
-</a>
-    </div>
-  </footer>
+<footer>
+  © ELVA Struktur
+</footer>
 
 </body>
 </html>
